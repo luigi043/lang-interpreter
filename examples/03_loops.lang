@@ -1,0 +1,52 @@
+# ── While loops ──────────────────────────────────────────
+
+let i = 1
+while (i <= 5) {
+  print("Count: " + str(i))
+  i = i + 1
+}
+
+# ── Summing with a loop ────────────────────────────────────
+
+fn sum(n) {
+  let total = 0
+  let k = 1
+  while (k <= n) {
+    total = total + k
+    k = k + 1
+  }
+  return total
+}
+
+print("Sum 1..100 = " + str(sum(100)))   # 5050
+
+# ── FizzBuzz ──────────────────────────────────────────────
+
+let n = 1
+while (n <= 20) {
+  if (n % 15 == 0) {
+    print("FizzBuzz")
+  } else if (n % 3 == 0) {
+    print("Fizz")
+  } else if (n % 5 == 0) {
+    print("Buzz")
+  } else {
+    print(str(n))
+  }
+  n = n + 1
+}
+
+# ── Power function ────────────────────────────────────────
+
+fn power(base, exp) {
+  let result = 1
+  let e = exp
+  while (e > 0) {
+    result = result * base
+    e = e - 1
+  }
+  return result
+}
+
+print("2^10 = " + str(power(2, 10)))     # 1024
+print("3^5  = " + str(power(3, 5)))      # 243

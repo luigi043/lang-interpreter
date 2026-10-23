@@ -1,0 +1,65 @@
+# ── Lexical scope demo ───────────────────────────────────
+
+fn makeCounter(start) {
+  let count = start
+
+  fn increment() {
+    count = count + 1
+    return count
+  }
+
+  return increment
+}
+
+# Note: calling makeCounter returns the inner fn object
+let counter = makeCounter(0)
+print(type(counter))      # function
+
+# Manually call the returned function by name isn't possible
+# without first-class function variable calling (extension idea).
+# Instead, demonstrate nested scope directly:
+
+fn outerScope() {
+  let x = 10
+
+  fn innerScope() {
+    let y = 20
+    return x + y     # x from outer scope
+  }
+
+  return innerScope()
+}
+
+print("Nested scope: " + str(outerScope()))   # 30
+
+# ── Closures capturing state ──────────────────────────────
+
+fn makeAdder(n) {
+  fn adder(x) {
+    return x + n
+  }
+  return adder
+}
+
+# Demonstrate with direct use of inner function
+fn add5(x) {
+  return x + 5
+}
+
+print("add5(10) = " + str(add5(10)))    # 15
+print("add5(37) = " + str(add5(37)))    # 42
+
+# ── Mutual recursion ──────────────────────────────────────
+
+fn isEven(n) {
+  if (n == 0) { return true }
+  return isOdd(n - 1)
+}
+
+fn isOdd(n) {
+  if (n == 0) { return false }
+  return isEven(n - 1)
+}
+
+print("isEven(4) = " + str(isEven(4)))   # true
+print("isOdd(7)  = " + str(isOdd(7)))    # true

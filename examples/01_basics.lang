@@ -1,0 +1,33 @@
+# ── Basic MiniLang demo ──────────────────────────────────
+# Variables & arithmetic
+
+let a = 5
+let b = 10
+
+print(a * b)            # 50
+print(a + b)            # 15
+print(b - a)            # 5
+print(b / a)            # 2
+
+# Strings
+let name = "MiniLang"
+print("Hello from " + name + "!")
+
+# Boolean expressions
+let x = 42
+let y = 100
+
+if (x < y) {
+  print("x is smaller than y")
+} else {
+  print("x is not smaller than y")
+}
+
+# Nested if / else-if
+if (x == 0) {
+  print("zero")
+} else if (x < 50) {
+  print("x is between 1 and 49")
+} else {
+  print("x is 50 or more")
+}

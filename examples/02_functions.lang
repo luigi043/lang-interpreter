@@ -1,0 +1,40 @@
+# ── Functions & recursion ────────────────────────────────
+
+fn greet(name) {
+  print("Hello, " + name + "!")
+}
+
+greet("World")
+greet("MiniLang")
+
+# ── Return values ─────────────────────────────────────────
+
+fn add(a, b) {
+  return a + b
+}
+
+let result = add(3, 7)
+print("3 + 7 = " + str(result))
+
+# ── Recursive functions ───────────────────────────────────
+
+fn factorial(n) {
+  if (n <= 1) {
+    return 1
+  }
+  return n * factorial(n - 1)
+}
+
+print("5! = " + str(factorial(5)))    # 120
+print("10! = " + str(factorial(10)))  # 3628800
+
+# ── Fibonacci ─────────────────────────────────────────────
+
+fn fib(n) {
+  if (n <= 1) {
+    return n
+  }
+  return fib(n - 1) + fib(n - 2)
+}
+
+print("fib(10) = " + str(fib(10)))    # 55
