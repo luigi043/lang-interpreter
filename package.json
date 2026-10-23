@@ -1,0 +1,23 @@
+{
+  "name": "minilang-interpreter",
+  "version": "1.0.0",
+  "description": "A custom programming language interpreter built in TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "repl": "ts-node src/index.ts",
+    "run:example": "ts-node src/index.ts run",
+    "tokens": "ts-node src/index.ts tokens",
+    "ast": "ts-node src/index.ts ast",
+    "demo": "ts-node src/index.ts run examples/01_basics.lang && ts-node src/index.ts run examples/02_functions.lang && ts-node src/index.ts run examples/03_loops.lang",
+    "test": "ts-node src/tests/run-tests.ts"
+  },
+  "keywords": ["interpreter", "compiler", "language", "ast", "lexer", "parser"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
