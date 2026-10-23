@@ -1,0 +1,6 @@
+npm install
+npm start run examples/02_functions.lang   # run a program
+npm start                                  # launch REPL
+npm test                                   # run all 41 tests
+npm start tokens examples/01_basics.lang   # inspect token stream
+npm start ast examples/01_basics.lang      # dump JSON AST
